@@ -9,7 +9,7 @@ const LeftSide = () => {
       .then((data) => setCategories(data));
   }, []);
   return (
-    <div className="w-auto flex flex-col justify-items-center">
+    <div className="w-auto flex flex-col justify-items-center mx-3">
       <ul className="menu bg-base-100 w-full rounded-box">
         <div className="alert alert-info shadow-lg">
           <div>
