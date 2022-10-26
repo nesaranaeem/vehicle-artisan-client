@@ -11,6 +11,7 @@ import {
   ReactPDF,
   pdf,
   Font,
+  Image,
 } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
 const CourseDetailsCard = () => {
@@ -25,10 +26,22 @@ const CourseDetailsCard = () => {
       flexDirection: "row",
       backgroundColor: "#E4E4E4",
     },
-    section: {
-      margin: 10,
-      padding: 10,
+    image: {
+      width: "90%",
+      height: "90%",
+      paddingLeft: 5,
+    },
+    centerImage: {
+      alignItems: "center",
       flexGrow: 1,
+    },
+    section: {
+      margin: 5,
+      padding: 5,
+      flexGrow: 1,
+    },
+    price: {
+      marginTop: 15,
     },
   });
   const generatePDFDocument = async () => {
@@ -37,9 +50,11 @@ const CourseDetailsCard = () => {
         <Page size="A4">
           <View style={styles.section}>
             <Text>Title: {tutorialTitle}</Text>
-          </View>
-          <View style={styles.section}>
+            <View style={styles.centerImage}>
+              <Image style={styles.image} src={tutorialThumbnail} />
+            </View>
             <Text>{tutorialDetails}</Text>
+            <Text style={styles.price}>Price: {tutorialPrice}</Text>
           </View>
         </Page>
       </Document>
