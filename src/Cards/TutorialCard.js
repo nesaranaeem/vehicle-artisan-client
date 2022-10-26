@@ -2,8 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const TutorialCard = ({ tutorial }) => {
-  const { tutorialTitle, tutorialDetails, tutorialThumbnail, tutorialPrice } =
-    tutorial;
+  const {
+    tutorialTitle,
+    tutorialDetails,
+    tutorialThumbnail,
+    tutorialPrice,
+    tutorialId,
+  } = tutorial;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <span className="indicator-item badge badge-primary m-2">
@@ -24,9 +29,9 @@ const TutorialCard = ({ tutorial }) => {
             : tutorialDetails}
         </p>
         <div className="card-actions">
-          <button className="btn btn-primary">
-            {tutorialPrice === "Free" ? "Free Enroll" : "Endroll Now"}
-          </button>
+          <Link to={`/tutorial/${tutorialId}`} className="btn btn-primary">
+            {tutorialPrice === "Free" ? "Free Enroll Now!" : "Enroll Now"}
+          </Link>
         </div>
       </div>
     </div>

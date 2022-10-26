@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+import CourseDetailsCard from "../../Cards/CourseDetailsCard";
 import Main from "../../layout/Main";
 import Homepage from "../../Pages/Homepage";
 import Tutorial from "../../Pages/Tutorial";
@@ -16,6 +17,8 @@ export const routes = createBrowserRouter([
       {
         path: "/tutorials",
         element: <Tutorials></Tutorials>,
+        loader: () =>
+          fetch(`https://vehicle-artisan-server.vercel.app/category/1`),
       },
       {
         path: "tutorials/:id",
@@ -23,6 +26,14 @@ export const routes = createBrowserRouter([
         loader: ({ params }) =>
           fetch(
             `https://vehicle-artisan-server.vercel.app/category/${params.id}`
+          ),
+      },
+      {
+        path: "tutorial/:id",
+        element: <CourseDetailsCard></CourseDetailsCard>,
+        loader: ({ params }) =>
+          fetch(
+            `https://vehicle-artisan-server.vercel.app/tutorial/${params.id}`
           ),
       },
     ],
