@@ -27,7 +27,7 @@ const CourseDetailsCard = () => {
       backgroundColor: "#E4E4E4",
     },
     image: {
-      width: "90%",
+      width: "60%",
       height: "90%",
       paddingLeft: 5,
     },

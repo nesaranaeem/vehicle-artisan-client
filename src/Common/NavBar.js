@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../images/logo.png";
 const NavBar = () => {
   return (
     <div className="navbar bg-base-100">
@@ -35,8 +35,13 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Vehicle Artisan
+
+        <Link to="/">
+          <img
+            src={logo}
+            className="w-28 h-16 border border-indigo-600 ml-3"
+            alt="logo"
+          />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
