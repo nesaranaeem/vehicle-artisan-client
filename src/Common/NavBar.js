@@ -39,7 +39,7 @@ const NavBar = () => {
         <Link to="/">
           <img
             src={logo}
-            className="w-28 h-16 border border-indigo-600 ml-3"
+            className="w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
             alt="logo"
           />
         </Link>
