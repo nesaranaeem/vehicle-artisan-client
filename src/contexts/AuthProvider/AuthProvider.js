@@ -28,6 +28,14 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  const updateName = (name, photoURL) => {
+    setLoading(true);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    });
+  };
+
   const updateUserDetails = (profile) => {
     return updateProfile(auth.currentUser, profile);
   };
@@ -57,6 +65,7 @@ const AuthProvider = ({ children }) => {
     updateUserDetails,
     gitHubLogIn,
     loading,
+    updateName,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

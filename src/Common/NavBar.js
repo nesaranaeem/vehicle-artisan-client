@@ -1,19 +1,27 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 import logo from "../images/logo.png";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  //navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.warning("log out successfuly");
+      })
       .catch((error) => {
         console.error(error);
       });
   };
   return (
-    <div className="navbar bg-base-100 m-3">
+    <div className="navbar bg-base-100 pt-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,7 +60,7 @@ const NavBar = () => {
         <Link to="/">
           <img
             src={logo}
-            className="w-14 sm:w-28 lg:w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
+            className="w-12 mr-4 sm:w-28 lg:w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
             alt="logo"
           />
         </Link>
@@ -71,15 +79,15 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end mr-4">
         <label
           tabIndex={0}
           className="btn btn-ghost btn-circle avatar tooltip"
           data-tip={`${user?.uid ? user.displayName : "Guest"}`}
         >
-          <div className="w-10 rounded-full">
+          <div className="w-8 h-8 rounded-full">
             {user?.uid ? (
-              <img src={user.photoURL} alt="" />
+              <img src={user?.photoURL} alt="" />
             ) : (
               <img
                 src="https://affiliateapp1.saasmax.com/ext/dark1/memberavatarstatus/image/avatar.png"
@@ -93,7 +101,7 @@ const NavBar = () => {
             <input type="checkbox" />
 
             <svg
-              className="swap-on fill-current w-10 h-10"
+              className="swap-on fill-current w-8 h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -101,7 +109,7 @@ const NavBar = () => {
             </svg>
 
             <svg
-              className="swap-off fill-current w-10 h-10"
+              className="swap-off fill-current w-8 h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -114,8 +122,8 @@ const NavBar = () => {
             Logout
           </button>
         ) : (
-          <Link to="/registration" className="btn">
-            Registration
+          <Link to="/registration" className="btn mr-2">
+            Registrer
           </Link>
         )}
       </div>
