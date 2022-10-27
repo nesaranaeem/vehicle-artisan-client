@@ -4,7 +4,9 @@ import CourseDetailsCard from "../../Cards/CourseDetailsCard";
 import Login from "../../Common/Login";
 import Registration from "../../Common/Registration";
 import Main from "../../layout/Main";
+import Blog from "../../Pages/Blog";
 import Checkout from "../../Pages/Checkout";
+import ErrorPage from "../../Pages/ErrorPage";
 import Homepage from "../../Pages/Homepage";
 import Tutorial from "../../Pages/Tutorial";
 import Tutorials from "../../Pages/Tutorials";
@@ -35,6 +37,7 @@ export const routes = createBrowserRouter([
       {
         path: "tutorial/:id",
         element: <CourseDetailsCard></CourseDetailsCard>,
+        errorElement: <ErrorPage></ErrorPage>,
         loader: ({ params }) =>
           fetch(
             `https://vehicle-artisan-server.vercel.app/tutorial/${params.id}`
@@ -48,6 +51,11 @@ export const routes = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+        loader: () => fetch(`https://vehicle-artisan-server.vercel.app/blog`),
+      },
 
       {
         path: "/checkout/:id",
@@ -56,10 +64,15 @@ export const routes = createBrowserRouter([
             <Checkout></Checkout>
           </PrivateRoute>
         ),
+        errorElement: <ErrorPage></ErrorPage>,
         loader: ({ params }) =>
           fetch(
             `https://vehicle-artisan-server.vercel.app/tutorial/${params.id}`
           ),
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
