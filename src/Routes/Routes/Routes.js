@@ -7,6 +7,7 @@ import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog";
 import Checkout from "../../Pages/Checkout";
 import ErrorPage from "../../Pages/ErrorPage";
+import Faq from "../../Pages/Faq";
 import Homepage from "../../Pages/Homepage";
 import Tutorial from "../../Pages/Tutorial";
 import Tutorials from "../../Pages/Tutorials";
@@ -50,6 +51,10 @@ export const routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
       },
       {
         path: "/blog",

@@ -56,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 mt-3">
       <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
         <form onSubmit={hendelEmailPasswordSingIn} className="card-body">
           <div className="form-control">
@@ -83,7 +83,7 @@ const Login = () => {
             <label className="label">
               <p>
                 Don't have Account?
-                <Link to={"/registration"} className="link link-primary pl-2">
+                <Link to={"/registration"} className="link link-hover pl-2">
                   Registration
                 </Link>
               </p>
@@ -99,7 +99,7 @@ const Login = () => {
             Login with Google
           </button>
           <p className="text-xl">Or</p>
-          <button onClick={handelGithubLogIn} className="btn btn-primary ">
+          <button onClick={handelGithubLogIn} className="btn">
             <FaGithub className="mr-2" />
             Login with GitHub
           </button>

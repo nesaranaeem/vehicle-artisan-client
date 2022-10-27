@@ -13,7 +13,7 @@ const NavBar = () => {
       });
   };
   return (
-    <div className="navbar bg-base-100 mt-3">
+    <div className="navbar bg-base-100 m-3">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,7 +52,7 @@ const NavBar = () => {
         <Link to="/">
           <img
             src={logo}
-            className="w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
+            className="w-14 sm:w-28 lg:w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
             alt="logo"
           />
         </Link>

@@ -47,7 +47,7 @@ const LeftSide = () => {
           </div>
         </div>
 
-        <div className="grid md:justify-items-stretch grid-cols-4 md:grid-cols-1 justify-center gap-1 w-full mt-2">
+        <div className="grid md:justify-items-stretch grid-cols-3 md:grid-cols-1 justify-center gap-1 w-full mt-2">
           {categories.map((category) => (
             <li key={category.categoryId}>
               <Link
