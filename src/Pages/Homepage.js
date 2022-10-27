@@ -44,7 +44,7 @@ const HomePage = () => {
           className="parallax-bg"
           style={{
             "background-image":
-              "url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=983&q=80)",
+              "url(https://i.ibb.co/jD8gZck/photo-1492144534655-ae79c964c9d7-ixlib-rb-4-0.jpg)",
           }}
           data-swiper-parallax="-23%"
         ></div>
@@ -54,7 +54,8 @@ const HomePage = () => {
               <div className="max-w-md">
                 <h1 className="text-5xl font-bold">Vehicle Artisan</h1>
                 <p className="py-6">
-                  Learn Vehicle Repairing With Vehicle Artisan
+                  Learn Vehicle Repairing With Vehicle Artisan Vehicle Repairing
+                  Tutorial
                 </p>
                 <Link to="/tutorials" className="btn btn-primary">
                   Get Started

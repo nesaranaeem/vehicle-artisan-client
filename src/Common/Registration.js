@@ -146,7 +146,7 @@ const Registration = () => {
             <label className="label">
               <p>
                 Already Have an Account?{" "}
-                <Link to={"/login"} className="link link-primary">
+                <Link to={"/login"} className="btn btn-sm hover:btn-accent">
                   Login
                 </Link>
               </p>
