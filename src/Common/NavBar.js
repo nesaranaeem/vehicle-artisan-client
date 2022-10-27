@@ -45,6 +45,9 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
+              <Link to="/">Vehicle Artisan</Link>
+            </li>
+            <li>
               <Link to="/tutorials">Tutorials</Link>
             </li>
             <li>
@@ -56,17 +59,20 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-
         <Link to="/">
           <img
             src={logo}
             className="w-12 mr-4 sm:w-28 lg:w-28 h-16 border border-indigo-600 ml-3 hover:bg-base-200"
             alt="logo"
           />
-        </Link>
+        </Link>{" "}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            Vehicle Artisan
+          </Link>
+
           <li>
             <Link to="/tutorials">Tutorials</Link>
           </li>
