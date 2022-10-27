@@ -1,9 +1,19 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 import logo from "../images/logo.png";
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 mt-3">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,11 +37,14 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <Link to="/tutorials">Tutorials</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ</Link>
             </li>
 
             <li>
-              <a>Item 3</a>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>
@@ -51,11 +64,30 @@ const NavBar = () => {
           </li>
 
           <li>
-            <a>Item 3</a>
+            <Link to="/faq">FAQ</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
+        <label
+          tabIndex={0}
+          className="btn btn-ghost btn-circle avatar tooltip"
+          data-tip={`${user?.uid ? user.displayName : "Guest"}`}
+        >
+          <div className="w-10 rounded-full">
+            {user?.uid ? (
+              <img src={user.photoURL} alt="" />
+            ) : (
+              <img
+                src="https://affiliateapp1.saasmax.com/ext/dark1/memberavatarstatus/image/avatar.png"
+                alt=""
+              />
+            )}
+          </div>
+        </label>
         <div className="mr-2">
           <label className="swap swap-rotate">
             <input type="checkbox" />
@@ -77,7 +109,15 @@ const NavBar = () => {
             </svg>
           </label>
         </div>
-        <a className="btn">Get started</a>
+        {user?.uid ? (
+          <button onClick={handleLogOut} className="btn">
+            Logout
+          </button>
+        ) : (
+          <Link to="/registration" className="btn">
+            Registration
+          </Link>
+        )}
       </div>
     </div>
   );
