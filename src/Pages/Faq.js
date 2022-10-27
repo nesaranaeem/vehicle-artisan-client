@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <div className="mt-3 grid justify-items-center md:justify-items-stretch grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="mt-3 grid justify-items-center md:justify-items-stretch grid-cols-1 md:grid-cols-2 gap-4 m-3">
       <div>
         <div className="collapse">
           <input type="checkbox" className="peer" />

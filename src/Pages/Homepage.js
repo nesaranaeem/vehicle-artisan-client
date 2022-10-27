@@ -78,7 +78,7 @@ const HomePage = () => {
                 <p>{category.categoryDescription}</p>
                 <div className="card-actions">
                   <Link to="/tutorials" className="btn btn-primary">
-                    Get Tutorial
+                    Get Our Tutorial
                   </Link>
                 </div>
               </div>
