@@ -34,7 +34,7 @@ const Registration = () => {
           userProfileUpdate(name, photoURL);
           form.reset();
           updateName(name, photoURL).then(() => {
-            toast.success("Successfylly");
+            toast.success("Successfully");
             navigate(from, { replace: true });
           });
         })

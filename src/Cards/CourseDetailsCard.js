@@ -77,7 +77,9 @@ const CourseDetailsCard = () => {
           <div className="card w-full bg-base-100 shadow-xl">
             <h2 className="card-title justify-center m-3 text-center">
               {tutorialTitle}
-              <div className="badge badge-secondary">{tutorialPrice}</div>
+              <div className="badge badge-secondary w-20 h-8">
+                {tutorialPrice}
+              </div>
             </h2>
             <div className="card-actions justify-center">
               <button
