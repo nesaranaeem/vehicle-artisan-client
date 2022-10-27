@@ -6,7 +6,6 @@ import toast, { Toaster } from "react-hot-toast";
 const Checkout = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
-
   const {
     tutorialTitle,
     tutorialPrice,
@@ -14,8 +13,7 @@ const Checkout = () => {
     tutorialThumbnail,
     tutorialId,
   } = details;
-  const notify = () =>
-    toast.success(`Hello, ${user.displayName}, Thank you for your interest`);
+  const notify = () => toast.success(`Hello, Thank you for your interest`);
   return (
     <div>
       <div className="card w-full bg-base-100 shadow-xl">
