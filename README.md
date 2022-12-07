@@ -18,4 +18,4 @@ Vehicle Artisan is a simple Vehicle related tutorial management system web app.b
 
 - [https://vehicle-artisan.web.app/](https://vehicle-artisan.web.app/) - Client Site
 - [https://vehicle-artisan-server.vercel.app/](https://vehicle-artisan-server.vercel.app/) - Server Site
-- [https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-nesaranaeem](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-nesaranaeem) - Server-side Code Github Repository
+- [https://github.com/nesaranaeem/vehicle-artisan-server](https://github.com/nesaranaeem/vehicle-artisan-server) - Server-side Code Github Repository

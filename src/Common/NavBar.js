@@ -13,8 +13,8 @@ const NavBar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        navigate(from, { replace: true });
         toast.warning("log out successfuly");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -95,10 +95,9 @@ const NavBar = () => {
             {user?.uid ? (
               <img src={user?.photoURL} alt="" />
             ) : (
-              <img
-                src="https://affiliateapp1.saasmax.com/ext/dark1/memberavatarstatus/image/avatar.png"
-                alt=""
-              />
+              <Link to="/login" className="btn mr-2">
+                Login
+              </Link>
             )}
           </div>
         </label>
