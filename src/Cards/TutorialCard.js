@@ -26,7 +26,7 @@ const TutorialCard = ({ tutorial }) => {
         </p>
         <div className="card-actions">
           <Link to={`/tutorial/${tutorialId}`} className="btn btn-primary">
-            {tutorialPrice === "Free" ? "Free Enroll Now!" : "Enroll Now"}
+            {tutorialPrice === "Free" ? "Free Enroll Now!" : "Enroll Now!"}
           </Link>
         </div>
       </div>
