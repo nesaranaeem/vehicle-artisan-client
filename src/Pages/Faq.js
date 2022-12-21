@@ -48,7 +48,7 @@ const Faq = () => {
             Is your site mobile responsive?
           </div>
           <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-            <p>yes this site is 100% mobile responsive</p>
+            <p>yes! this site is 100% mobile responsive</p>
           </div>
         </div>
       </div>
